@@ -17,20 +17,22 @@ public class Ventana extends JFrame{
     private Tablero lamina;
     private Hilo hilo;
     public Ventana() {
-        setTitle("Pong");
-        setSize(ancho,alto);
-        setLocationRelativeTo(null);//centrada
-        setResizable(false);
+        this.setTitle("Pong");
+        this.setSize(ancho,alto);
+        this.setLocationRelativeTo(null);//centrada
+        this.setResizable(false);
         lamina = new Tablero();
-        add(lamina);//muesta el panel
-        addKeyListener(new Teclado());
-        setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//finaliza al cerrar
+        this.add(lamina);//muesta el panel
+        this.addKeyListener(new Teclado());
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//finaliza al cerrar
         
         hilo=new Hilo(lamina);
-        hilo.start();
-
-        
+        hilo.start();     
+    }
+    
+    public void cerrar(){
+        this.dispose();
     }
     
     

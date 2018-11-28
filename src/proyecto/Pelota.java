@@ -15,9 +15,13 @@ import java.awt.geom.Rectangle2D;
 public class Pelota {
     private int x;
     private int y;
-    private int dx=1, dy=1;
+    
+    private int velocidad=1;
+//    private int dificultad=100;
+    private int dx=velocidad, dy=velocidad;
     private final int ancho=10, alto=10;
     private int marcadorP1=0, marcadorP2=0;
+    public static int puntaje=0;
     public static boolean fin = false;
 
     public Pelota(int x, int y) {
@@ -36,10 +40,39 @@ public class Pelota {
         if(colisionR1){
             dx=-dx;
             x=45;
+            puntaje++;
+//            if(puntaje==dificultad){
+//                velocidad++;
+//                dificultad=dificultad+dificultad;
+//                if(dx>0){
+//                    dx=velocidad;
+//                }else{
+//                    dx=-velocidad;
+//                }
+//                if(dy>0){
+//                    dy=velocidad;
+//                }else{
+//                    dy=-velocidad;
+//                }
+//            }
         }
         if(colisionR2){
             dx=-dx;
             x=725;
+            puntaje++;
+//            if(puntaje==dificultad){
+//                velocidad++;
+//                if(dx>0){
+//                    dx=velocidad;
+//                }else{
+//                    dx=-velocidad;
+//                }
+//                if(dy>0){
+//                    dy=velocidad;
+//                }else{
+//                    dy=-velocidad;
+//                }
+//            }
         }
         if(x>limites.getMaxX()){
             dx=-dx;
@@ -60,6 +93,10 @@ public class Pelota {
         if(y<0){
             dy=-dy;
         }
+    }
+
+    public int getPuntaje() {
+        return puntaje;
     }
 
     public int getMarcadorP1() {

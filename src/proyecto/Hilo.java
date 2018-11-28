@@ -12,25 +12,42 @@ import java.util.logging.Logger;
  *
  * @author TOSHIBA SATELLITE
  */
-public class Hilo extends Thread{
-    Tablero lamina;
+public class Hilo extends Thread {
 
-    public Hilo(Tablero lamina) {
-        this.lamina = lamina;
+    Tablero panel;
+    int puntaje = 0;
+
+    public Hilo(Tablero panel) {
+        this.panel = panel;
     }
-    
-    public void run(){
-        while(!Pelota.fin){
-            try {
-                Thread.sleep(3);
-                lamina.repaint();
+
+    public void run() {
+        try {
+            while (!Pelota.fin) {
+                try {
+                    Thread.sleep(3);
+                    panel.repaint();
+                    
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
+            Thread.sleep(10);
+            Jugador nuevo = new Jugador(Pong.jugador1+" vs "+Pong.jugador2,Pelota.puntaje);
+            Pong.puntajes.acomodar(nuevo);
+            VentanaPuntajes vpuntaje = new VentanaPuntajes();
+            vpuntaje.setVisible(true);
+            TestMenu.Actal.dispose();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+
     }
-    
+
+    public int getPuntaje() {
+        return puntaje;
+    }
+
 }
