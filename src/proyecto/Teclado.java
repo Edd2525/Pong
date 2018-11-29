@@ -13,7 +13,7 @@ import java.awt.event.KeyEvent;
  * @author TOSHIBA SATELLITE
  */
 public class Teclado extends KeyAdapter {
-    public static boolean w, s, o, l, enter;
+    public static boolean w, s, o, l, enter, esc;
     
     @Override
     public void keyPressed(KeyEvent e){
@@ -32,6 +32,9 @@ public class Teclado extends KeyAdapter {
         }
         if(id==KeyEvent.VK_ENTER){
             enter=true;
+        }
+        if(id==KeyEvent.VK_ESCAPE){
+            esc=true;
         }
     }
     
@@ -52,6 +55,9 @@ public class Teclado extends KeyAdapter {
         }
         if(id==KeyEvent.VK_ENTER){
             enter=false;
+        }
+        if(id==KeyEvent.VK_ESCAPE){
+            esc=false;
         }
     }
 }

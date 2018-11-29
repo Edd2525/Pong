@@ -16,35 +16,35 @@ public class VentanaPuntajes extends javax.swing.JFrame {
      */
     public VentanaPuntajes() {
         initComponents();
-        this.Jugadorestxr.setText(Pong.puntajes.jugadores[0].getNombre());
-        this.puntajetxt.setText(Integer.toString(Pong.puntajes.jugadores[0].getPuntaje()));
+        this.Jugadorestxr.setText(Proyecto.puntajes.jugadores[0].getNombre());
+        this.puntajetxt.setText(Integer.toString(Proyecto.puntajes.jugadores[0].getPuntaje()));
         
-        this.Jugadorestxr1.setText(Pong.puntajes.jugadores[1].getNombre());
-        this.puntajetxt1.setText(Integer.toString(Pong.puntajes.jugadores[1].getPuntaje()));
+        this.Jugadorestxr1.setText(Proyecto.puntajes.jugadores[1].getNombre());
+        this.puntajetxt1.setText(Integer.toString(Proyecto.puntajes.jugadores[1].getPuntaje()));
         
-        this.Jugadorestxr2.setText(Pong.puntajes.jugadores[2].getNombre());
-        this.puntajetxt2.setText(Integer.toString(Pong.puntajes.jugadores[2].getPuntaje()));
+        this.Jugadorestxr2.setText(Proyecto.puntajes.jugadores[2].getNombre());
+        this.puntajetxt2.setText(Integer.toString(Proyecto.puntajes.jugadores[2].getPuntaje()));
         
-        this.Jugadorestxr3.setText(Pong.puntajes.jugadores[3].getNombre());
-        this.puntajetxt3.setText(Integer.toString(Pong.puntajes.jugadores[3].getPuntaje()));
+        this.Jugadorestxr3.setText(Proyecto.puntajes.jugadores[3].getNombre());
+        this.puntajetxt3.setText(Integer.toString(Proyecto.puntajes.jugadores[3].getPuntaje()));
         
-        this.Jugadorestxr4.setText(Pong.puntajes.jugadores[4].getNombre());
-        this.puntajetxt4.setText(Integer.toString(Pong.puntajes.jugadores[4].getPuntaje()));
+        this.Jugadorestxr4.setText(Proyecto.puntajes.jugadores[4].getNombre());
+        this.puntajetxt4.setText(Integer.toString(Proyecto.puntajes.jugadores[4].getPuntaje()));
         
-        this.Jugadorestxr5.setText(Pong.puntajes.jugadores[5].getNombre());
-        this.puntajetxt5.setText(Integer.toString(Pong.puntajes.jugadores[5].getPuntaje()));
+        this.Jugadorestxr5.setText(Proyecto.puntajes.jugadores[5].getNombre());
+        this.puntajetxt5.setText(Integer.toString(Proyecto.puntajes.jugadores[5].getPuntaje()));
         
-        this.Jugadorestxr6.setText(Pong.puntajes.jugadores[6].getNombre());
-        this.puntajetxt6.setText(Integer.toString(Pong.puntajes.jugadores[6].getPuntaje()));
+        this.Jugadorestxr6.setText(Proyecto.puntajes.jugadores[6].getNombre());
+        this.puntajetxt6.setText(Integer.toString(Proyecto.puntajes.jugadores[6].getPuntaje()));
         
-        this.Jugadorestxr7.setText(Pong.puntajes.jugadores[7].getNombre());
-        this.puntajetxt7.setText(Integer.toString(Pong.puntajes.jugadores[7].getPuntaje()));
+        this.Jugadorestxr7.setText(Proyecto.puntajes.jugadores[7].getNombre());
+        this.puntajetxt7.setText(Integer.toString(Proyecto.puntajes.jugadores[7].getPuntaje()));
         
-        this.Jugadorestxr8.setText(Pong.puntajes.jugadores[8].getNombre());
-        this.puntajetxt8.setText(Integer.toString(Pong.puntajes.jugadores[8].getPuntaje()));
+        this.Jugadorestxr8.setText(Proyecto.puntajes.jugadores[8].getNombre());
+        this.puntajetxt8.setText(Integer.toString(Proyecto.puntajes.jugadores[8].getPuntaje()));
         
-        this.Jugadorestxr9.setText(Pong.puntajes.jugadores[9].getNombre());
-        this.puntajetxt9.setText(Integer.toString(Pong.puntajes.jugadores[9].getPuntaje()));
+        this.Jugadorestxr9.setText(Proyecto.puntajes.jugadores[9].getNombre());
+        this.puntajetxt9.setText(Integer.toString(Proyecto.puntajes.jugadores[9].getPuntaje()));
     }
 
     /**
@@ -302,7 +302,8 @@ public class VentanaPuntajes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Inicio menu = new Inicio();
+//        Inicio menu = new Inicio();
+        TestMenu menu = new TestMenu();
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

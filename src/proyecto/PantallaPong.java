@@ -5,46 +5,54 @@
  */
 package proyecto;
 
+import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
  * @author TOSHIBA SATELLITE
  */
-public class Juego extends javax.swing.JFrame {
-    private final int ancho=800, alto=500;
-    private Tablero panel;
-    private Hilo hilo;
+public class PantallaPong extends javax.swing.JFrame {
 
     /**
-     * Creates new form Juego
+     * Creates new form PantallaPong
      */
-    public Juego() {
+    private Hilo hilo;
+    private Tablero panel;
+
+    public PantallaPong() {
+        //initComponents();
         this.setTitle("Pong");
-        this.setSize(ancho,alto);
+        this.setSize(800, 500);
         this.setLocationRelativeTo(null);//centrada
         this.setResizable(false);
-        panel = new Tablero();
-        this.add(panel);//muesta el panel
         this.addKeyListener(new Teclado());
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//finaliza al cerrar
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel = new Tablero();
+        this.add(panel);//muesta el panel
+
         KeyAdapter listener = new KeyAdapter() {
-            @Override public void keyPressed(KeyEvent e) {
-                if(Teclado.enter){
-                    Teclado.enter=false;
-                    Inicio menu = new Inicio();
-                    menu.setVisible(true);
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (Teclado.enter) {
+                    Teclado.enter = false;
+                    hilo = new Hilo(panel);
+                    hilo.start();
+
+                }
+                if (Teclado.esc) {
+                    Teclado.esc = false;
+                    VentanaPuntajes m = new VentanaPuntajes();
+                    m.setVisible(true);
                     dispose();
-                }       
+                }
             }
         };
         this.addKeyListener(listener);
-        
-        hilo=new Hilo(panel);
-        hilo.start();
     }
 
     /**
@@ -56,18 +64,33 @@ public class Juego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 500));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -90,24 +113,25 @@ public class Juego extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Juego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Juego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Juego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Juego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Juego().setVisible(true);
+                new PantallaPong().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

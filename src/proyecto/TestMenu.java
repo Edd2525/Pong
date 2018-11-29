@@ -13,7 +13,7 @@ public class TestMenu extends javax.swing.JFrame {
     /**
      * Creates new form TestMenu
      */
-    public static Juego Actal;
+
     public TestMenu() {
         initComponents();
     }
@@ -62,12 +62,10 @@ public class TestMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
 //        Juego pong = new Juego();
 //        pong.setVisible(true);
-        Pong.jugador1="Test1";
-        Pong.jugador2="Test2";
-        TestMenu.Actal = new Juego();
-        TestMenu.Actal.setVisible(true);
-//        VentanaPuntajes vp = new VentanaPuntajes();
-//        vp.setVisible(true);
+//        Pong.jugador1="Test1";
+//        Pong.jugador2="Test2";
+        PantallaPong Actal = new PantallaPong();
+        Actal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

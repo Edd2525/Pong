@@ -146,7 +146,6 @@ public class Jugador1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         Proyecto.jugador1 = this.Nombretxt.getText();
         Proyecto.jugador2 = "CPU";
-        System.out.println(Proyecto.jugador1);
         Juego nuevoJuego = new Juego();
         Inicio.Actal = nuevoJuego;
         Inicio.Actal.setVisible(true);
