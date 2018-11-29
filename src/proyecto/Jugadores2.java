@@ -150,6 +150,8 @@ public class Jugadores2 extends javax.swing.JFrame {
 
     private void JugarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugarbtnActionPerformed
         // TODO add your handling code here:
+        Proyecto.jugador1=this.Nombre1txt.getText();
+        Proyecto.jugador2=this.Nombre2txt.getText();
         Inicio.Actal = new Juego();
         Inicio.Actal.setVisible(true);
         this.dispose();

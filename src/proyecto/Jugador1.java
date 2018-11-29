@@ -136,15 +136,19 @@ public class Jugador1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-   Inicio volver = new Inicio();
+        Inicio volver = new Inicio();
         volver.setVisible(true);
-        
-        this.dispose();        
+
+        this.dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         // TODO add your handling code here:
-        Inicio.Actal = new Juego();
+        Proyecto.jugador1 = this.Nombretxt.getText();
+        Proyecto.jugador2 = "CPU";
+        System.out.println(Proyecto.jugador1);
+        Juego nuevoJuego = new Juego();
+        Inicio.Actal = nuevoJuego;
         Inicio.Actal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jToggleButton2ActionPerformed

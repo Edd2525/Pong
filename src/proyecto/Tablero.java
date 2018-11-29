@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,7 +29,7 @@ public class Tablero extends JPanel{
     Raqueta r1 = new Raqueta(30,175);
     Raqueta r2 = new Raqueta(754,175);
     
-    private int puntajeGanador=2;
+    private int puntajeGanador=1;
     
     public Tablero() {
         this.setBackground(Color.black);//define el color
@@ -77,10 +78,12 @@ public class Tablero extends JPanel{
         
         if (pelota.getMarcadorP1() == puntajeGanador) {
             g.drawString("GANO El JUGADOR 1", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
+            //JOptionPane.showMessageDialog(null, "EL GANADOR FUE "+Proyecto.jugador1);
             Pelota.fin = true;
         }
         if (pelota.getMarcadorP2() == puntajeGanador) {
             g.drawString("GANO EL JUGADOR 2", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
+            //JOptionPane.showMessageDialog(null, "EL GANADOR FUE "+Proyecto.jugador2);
             Pelota.fin = true;
         }
     }

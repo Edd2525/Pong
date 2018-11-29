@@ -29,14 +29,23 @@ public class Hilo extends Thread {
                     
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex);
                 }
                 
             }
-            Jugador nuevo = new Jugador(Pong.jugador1+" vs "+Pong.jugador2,Pelota.puntaje);
+        try {
+            Thread.sleep(1000);
+            Jugador nuevo = new Jugador(Proyecto.jugador1+" vs "+Proyecto.jugador2,Pelota.puntaje);
             Pong.puntajes.acomodar(nuevo);
+            Pelota.puntaje=0;
             Inicio inicio = new Inicio();
             inicio.setVisible(true);
             Inicio.Actal.dispose();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
+        }
+            
         
 
     }
