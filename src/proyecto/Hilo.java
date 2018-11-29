@@ -22,7 +22,6 @@ public class Hilo extends Thread {
     }
 
     public void run() {
-        try {
             while (!Pelota.fin) {
                 try {
                     Thread.sleep(3);
@@ -33,15 +32,11 @@ public class Hilo extends Thread {
                 }
                 
             }
-            Thread.sleep(10);
             Jugador nuevo = new Jugador(Pong.jugador1+" vs "+Pong.jugador2,Pelota.puntaje);
             Pong.puntajes.acomodar(nuevo);
-            VentanaPuntajes vpuntaje = new VentanaPuntajes();
-            vpuntaje.setVisible(true);
-            TestMenu.Actal.dispose();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            Inicio inicio = new Inicio();
+            inicio.setVisible(true);
+            Inicio.Actal.dispose();
         
 
     }
