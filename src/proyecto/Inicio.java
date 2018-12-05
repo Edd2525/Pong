@@ -10,7 +10,6 @@ package proyecto;
  * @author jessi
  */
 public class Inicio extends javax.swing.JFrame {
-    public static Juego Actal;
     /**
      * Creates new form Inicio
      */

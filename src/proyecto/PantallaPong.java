@@ -46,8 +46,8 @@ public class PantallaPong extends javax.swing.JFrame {
                 }
                 if (Teclado.esc) {
                     Teclado.esc = false;
-                    VentanaPuntajes m = new VentanaPuntajes();
-                    m.setVisible(true);
+                    Inicio menu = new Inicio();
+                    menu.setVisible(true);
                     dispose();
                 }
             }

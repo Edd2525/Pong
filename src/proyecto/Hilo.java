@@ -34,8 +34,8 @@ public class Hilo extends Thread {
                 
             }
             
-//            Jugador nuevo = new Jugador(Proyecto.jugador1+" vs "+Proyecto.jugador2,Pelota.puntaje);
-//            Pong.puntajes.acomodar(nuevo);
+            Jugador nuevo = new Jugador(Proyecto.jugador1+" vs "+Proyecto.jugador2,Pelota.puntaje);
+            Proyecto.puntajes.acomodar(nuevo);
 //            Pelota.puntaje=0;
 //            Inicio inicio = new Inicio();
 //            inicio.setVisible(true);

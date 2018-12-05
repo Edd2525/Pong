@@ -152,8 +152,10 @@ public class Jugadores2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         Proyecto.jugador1=this.Nombre1txt.getText();
         Proyecto.jugador2=this.Nombre2txt.getText();
-        Inicio.Actal = new Juego();
-        Inicio.Actal.setVisible(true);
+        Pelota.fin=false;
+        Pelota.puntaje=0;
+        PantallaPong nuevoJuego = new PantallaPong();
+        nuevoJuego.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_JugarbtnActionPerformed
 
